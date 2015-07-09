@@ -82,7 +82,8 @@
             "afterEach"  : false,
             "alert"      : false,
             "prompt"     : false,
-            "QN"         : false
+            "QN"         : false,
+            "JSON"       : false
         }
     },
     "jscs": {
