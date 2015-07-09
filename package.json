@@ -1,0 +1,21 @@
+{
+    "name": "gulp-jscheck",
+    "version": "1.0.0",
+    "description": "gulp plugin for jscheck in frontend project",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:modao/gulp-jscheck.git"
+    },
+    "keywords": [
+        "gulp", "jshint", "jscs"
+    ],
+    "author": "mohen",
+    "dependencies": {
+        "gulp": "~3.8.11",
+        "gulp-util": "~3.0.6",
+        "jshint": "~2.8.0",
+        "jscs": "~1.13.1",
+        "through2": "~2.0.0"
+    },
+    "license": "ISC"
+}
