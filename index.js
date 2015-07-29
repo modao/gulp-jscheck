@@ -1,5 +1,5 @@
 /**
- * gulp-seller-jscheck模块
+ * gulp-jscheck模块
  */
 
 'use strict';
@@ -13,7 +13,8 @@ var jscsReporter = require('./jscs-reporter');
 
 var jshintConfig = checkConfig.jshint;
 var jscsConfig = checkConfig.jscs;
-
+var jshintErrorsCount = 0,
+    jscsErrorsCount = 0;
 
 /**
  * 可以通过配置config.reporter为true来开启jshint的reporter，功能为将检查日志输出到项目根目录下的jshint.log文件中，方便查看
@@ -52,9 +53,10 @@ module.exports = function(config) {
         jshint.JSHINT(content, jshintConfig);
 
         jshintErrors = jshint.JSHINT.errors;
+        jshintErrorsCount += jshintErrors.length;
         if(openReporter) {
             jshintReporter.reporter(filename, jshintErrors);
-            if(jshintErrors.length <= 0) {
+            if(jshintErrorsCount <= 0) {
                 jshintReporter.removeLog();
             }
         }else {
@@ -64,10 +66,10 @@ module.exports = function(config) {
         //开启jscs检查
 
         jscsErrors = (jscsChecker.checkString(content, file.relative)).getErrorList();
-
+        jscsErrorsCount += jscsErrors.length;
         if(openReporter) {
             jscsReporter.reporter(filename, jscsErrors);
-            if(jscsErrors.length <= 0) {
+            if(jscsErrorsCount <= 0) {
                 jscsReporter.removeLog();
             }
         }else {
