@@ -1,6 +1,6 @@
 {
     "name": "gulp-jscheck",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "gulp plugin for jscheck in frontend project",
     "repository": {
         "type": "git",
