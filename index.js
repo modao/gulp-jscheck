@@ -54,6 +54,9 @@ module.exports = function(config) {
         jshintErrors = jshint.JSHINT.errors;
         if(openReporter) {
             jshintReporter.reporter(filename, jshintErrors);
+            if(jshintErrors.length <= 0) {
+                jshintReporter.removeLog();
+            }
         }else {
             jshintReporter.console(filename, jshintErrors);
         }
@@ -64,6 +67,9 @@ module.exports = function(config) {
 
         if(openReporter) {
             jscsReporter.reporter(filename, jscsErrors);
+            if(jscsErrors.length <= 0) {
+                jscsReporter.removeLog();
+            }
         }else {
             jscsReporter.console(filename, jscsErrors);
         }

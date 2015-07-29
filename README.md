@@ -77,27 +77,27 @@ js代码风格检查使用的统一jshint与jscs规范
     "maxstatements" : 30,
     "maxcomplexity" : 20,
     "maxlen"        : 100,
-    "globals": {
-        "console"    : false,
-        "KISSY"      : false,
-        "JSTracker"  : false,
-        "define"     : false,
-        "require"    : false,
-        "module"     : false,
-        "exports"    : false,
-        "describe"   : false,
-        "xdescribe"  : false,
-        "it"         : false,
-        "xit"        : false,
-        "before"     : false,
-        "after"      : false,
-        "beforeEach" : false,
-        "afterEach"  : false,
-        "alert"      : false,
-        "prompt"     : false,
-        "QN"         : false，
-        "JSON"       : false
-    }
+    "predef": [
+        "console"    ,
+        "KISSY"      ,
+        "JSTracker"  ,
+        "define"     ,
+        "require"    ,
+        "module"     ,
+        "exports"    ,
+        "describe"   ,
+        "xdescribe"  ,
+        "it"         ,
+        "xit"        ,
+        "before"     ,
+        "after"      ,
+        "beforeEach" ,
+        "afterEach"  ,
+        "alert"      ,
+        "prompt"     ,
+        "QN"         ,
+        "JSON"
+    ]
 }
 ```
 
