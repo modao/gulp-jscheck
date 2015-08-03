@@ -77,7 +77,7 @@ module.exports = function(config) {
         }
 
         //一定要调用callback告知该文件模块已经处理完毕
-        callback();
+        callback(null, file);
 
     });
 };
