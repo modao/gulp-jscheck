@@ -6,13 +6,16 @@ js代码风格检查使用的统一jshint与jscs规范
 ```
     var jscheck = require('gulp-jscheck');
     gulp.src('xxx.js').pipe(jscheck({
-        reporter: true
+        reporter: true，
+        abort: true
     }));
 ```
 
 ### 配置参数：
-    reporter[boolean]: 是否使用reporter，默认为false。如果开启，则会在项目根目录下创建jshint.log与jscs.log来记录代码检查的错误日志，方便进行改正
-    
+* reporter[boolean]: 是否使用reporter，默认为false。
+如果开启，则会在项目根目录下创建jshint.log与jscs.log来记录代码检查的错误日志，方便进行改正
+* abort[boolean]: 是否当检查到jshint或jscs错误时就抛出异常并终止构建，默认为false。
+如果开启，则当打包过程中出现jshint或jscs错误时就会给出提示并强制终止构建，目的在强制要求修正这些问题
 ### 模块中内置的jshint与jscs配置项
 
 * jshint

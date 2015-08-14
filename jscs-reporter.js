@@ -6,6 +6,7 @@
 "use strict";
 
 var fs = require('fs');
+var chalk = require('chalk');
 var LOG_FILE = 'jscs-debug.log';
 
 
@@ -34,8 +35,8 @@ module.exports = {
     reporter: function(filename, results){
         var errorStr;
         results.forEach(function(error){
-            errorStr = 'Filename:' + filename + ', Line ' + error.line + ', Col ' + error.column + ', Rule ' + error.rule + ', ' + error.message;
-            console.log(errorStr + '\n\n');
+            errorStr = ' Filename:' + filename + ', Line ' + error.line + ', Col ' + error.column + ', Rule ' + error.rule + ', ' + error.message;
+            console.log(chalk.red('[JSCS ERROR]') + errorStr + '\n\n');
             fs.appendFileSync(LOG_FILE, errorStr + '\n\n');
         });
     },
@@ -48,8 +49,8 @@ module.exports = {
     console: function(filename, results) {
         var errorStr;
         results.forEach(function(error){
-            errorStr = 'Filename:' + filename + ', Line ' + error.line + ', Col ' + error.column + ', Rule ' + error.rule + ', ' + error.message;
-            console.log(errorStr + '\n\n');
+            errorStr = ' Filename:' + filename + ', Line ' + error.line + ', Col ' + error.column + ', Rule ' + error.rule + ', ' + error.message;
+            console.log(chalk.red('[JSCS ERROR]') + errorStr + '\n\n');
         });
     }
 
